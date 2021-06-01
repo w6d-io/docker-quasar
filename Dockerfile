@@ -11,11 +11,8 @@ LABEL maintainer="${USER_NAME} <${USER_EMAIL}>" \
         org.label-schema.version=$VERSION
 
 ENV DESIRED_VERSION $DESIRED_VERSION
-RUN cat /etc/*-release  && \
-    id -u -n  && \
-    apt update  && \
-    apt -y install git zip  && \
-    npm i -g @quasar/cli
-
-COPY scripts/* /usr/local/bin/
-
+RUN cat /etc/*-release
+RUN id -u -n
+RUN apt update
+RUN apt -y install git zip
+RUN npm i -g @quasar/cli
