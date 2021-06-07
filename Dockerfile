@@ -18,8 +18,6 @@ RUN apt -y install git zip
 RUN npm i -g @quasar/cli && \
     npm i -g @vue/cli && \
     npm i -g @vue/cli-init
-
-RUN mkdir /home/node/app
-# VOLUME [ "/home/node/app" ]
-WORKDIR /home/node/app
-CMD /bin/sh
+RUN ls /bin
+RUN ls /bin/bash
+ENTRYPOINT ["/bin/bash/quasar"]
