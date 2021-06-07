@@ -16,6 +16,6 @@ RUN cat /etc/*-release
 RUN id -u -n
 RUN apt update
 RUN apt -y install git zip
-RUN npm install eslint
+RUN npm i -g eslint
 RUN npm i -g @quasar/app
 ENTRYPOINT ["/bin/sh", "-c"]
