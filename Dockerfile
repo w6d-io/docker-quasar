@@ -15,7 +15,11 @@ RUN cat /etc/*-release
 RUN id -u -n
 RUN apt update
 RUN apt -y install git zip
-RUN npm i -g @quasar/cli
-RUN quasar build
-RUN ls /usr/bin/
-ENTRYPOINT ["/usr/bin/quasar"]
+RUN npm i -g @quasar/cli && \
+    npm i -g @vue/cli && \
+    npm i -g @vue/cli-init
+
+RUN mkdir /home/node/app
+# VOLUME [ "/home/node/app" ]
+WORKDIR /home/node/app
+CMD /bin/sh
