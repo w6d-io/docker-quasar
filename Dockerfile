@@ -10,6 +10,7 @@ LABEL maintainer="${USER_NAME} <${USER_EMAIL}>" \
         org.label-schema.build-date=$BUILD_DATE \
         org.label-schema.version=$VERSION
 
+
 ENV DESIRED_VERSION $DESIRED_VERSION
 RUN cat /etc/*-release
 RUN id -u -n
