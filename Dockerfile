@@ -16,4 +16,6 @@ RUN id -u -n
 RUN apt update
 RUN apt -y install git zip
 RUN npm i -g @quasar/cli
-
+RUN quasar build
+RUN ls /usr/bin/
+ENTRYPOINT ["/usr/bin/quasar"]
