@@ -15,9 +15,7 @@ RUN cat /etc/*-release
 RUN id -u -n
 RUN apt update
 RUN apt -y install git zip
-RUN npm i -g @quasar/cli && \
-    npm i -g @vue/cli && \
-    npm i -g @vue/cli-init
+RUN npm i -g @quasar/cli
 RUN ls /bin
 RUN ls /bin/bash
 ENTRYPOINT ["/bin/bash/quasar"]
